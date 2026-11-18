@@ -3,14 +3,14 @@ Early-warning academic outcome prediction using the Open University Learning Ana
 
 # Online Learning Engagement & Performance
 
-## 📌 Project Overview
+## Project Overview
 In blended and asynchronous Open Distance Learning (ODL) environments, student attrition and sudden withdrawal are critical institutional challenges. Traditional academic analytics often detect underperformance too late—typically after mid-term exams or major assignment deadlines.
 
 This project develops an early-warning predictive system using the **Open University Learning Analytics Dataset (OULAD)** to classify student academic outcomes into a binary **Pass vs. Non-Pass** target (consolidating *Pass/Distinction* vs. *Fail/Withdrawn*). Crucially, this study explores whether non-traditional computational frameworks, **Hyperdimensional Computing (HDC)** and **Weight-Agnostic Neural Networks (WANN)**, can match or surpass traditional ensemble baselines, particularly under aggressive feature compression.
 
 ---
 
-## 📊 Dataset: Open University Learning Analytics Dataset (OULAD)
+## Dataset: Open University Learning Analytics Dataset (OULAD)
 * **Source:** [Open University Knowledge Media Institute](https://analyse.kmi.open.ac.uk/open-dataset)
 * **Scale:** 32,593 unique student records across 7 distinct modules and multiple chronological presentations.
 
@@ -26,7 +26,7 @@ The pipeline integrates seven relational CSV tables into a unified master matrix
 
 ---
 
-## ⚙️ Data Integration & Feature Engineering
+## Data Integration & Feature Engineering
 Following the methodology established by Yulianto et al. (2025), our preprocessing pipeline performs:
 * **Temporal Click Splitting**: Aggregates total VLE interactions (`sum_click`) and splits them into pre-course engagement (`Before_Clicks`, `date < 0`) and active-course engagement (`After_Clicks`, `date >= 0`).
 * **Formative Assessment Aggregation**: Computes student-level `mean_score` across module assessments.
@@ -35,7 +35,7 @@ Following the methodology established by Yulianto et al. (2025), our preprocessi
 
 ---
 
-## 📈 Key Exploratory Data Analysis (EDA) Insights
+## Key Exploratory Data Analysis (EDA) Insights
 * **Balanced Binary Target**: Consolidating outcomes yields a near-symmetric split of **47.20% Pass** (15,385 records) and **52.80% Non-Pass** (17,208 records).
 * **Behavioral Engagement**: `sum_click` exhibits a strong right-skew; Non-Pass students cluster sharply near zero engagement, while Pass students show sustained VLE interaction.
 * **Assessment Boundary**: `mean_score` displays clear class separation, with Pass students clustering in the 70–90 score range.
@@ -43,7 +43,7 @@ Following the methodology established by Yulianto et al. (2025), our preprocessi
 
 ---
 
-## 🎯 Research Benchmark & Experimental Paradigms
+## Research Benchmark & Experimental Paradigms
 This project benchmarks models against the peer-reviewed baseline by **Yulianto et al. (2025)** (*"Binary Classification of Academic Outcomes Using Ensemble Learning and Neural Networks: A Case Study on OULAD"*) across three feature paradigms:
 1. **Standard Paradigm**: Full 38-feature consolidated matrix.
 2. **Recursive Feature Elimination (RFE)**: Top 5 features selected via Random Forest.
@@ -65,14 +65,7 @@ This project benchmarks models against the peer-reviewed baseline by **Yulianto 
 
 ---
 
-## 🚀 Getting Started
-
 ### Prerequisites
 * Python 3.8+
 * `pandas`, `numpy`, `scikit-learn`, `matplotlib`, `seaborn`
 
-### Running the Pipeline
-1. Clone this repository:
-   ```bash
-   git clone [https://github.com/](https://github.com/)<your-username>/Online-Learning-Engagement-Performance.git
-   cd Online-Learning-Engagement-Performance
